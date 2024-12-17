@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other Gift Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* Light blue background for a winter feel */
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-image: url('https://example.com/xmas-background.jpg'); /* Christmas background */
+            background-size: cover;
+            background-position: center;
+        }
+
+        h1 {
+            font-size: 8rem; /* Even bigger font for ARTE MO TE */
+            font-weight: bold;
+            color: #ff0000; /* Red color for the text */
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7); /* Stronger shadow for impact */
+            transform: rotate(-10deg); /* More aggressive angle */
+            letter-spacing: 10px; /* Increased spacing for more emphasis */
+        }
+
+        .description {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            font-weight: normal;
+            color: #333;
+        }
+
+        .bye-btn {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            background-color: #000; /* Black color for the button */
+            border-radius: 50px;
+            padding: 10px 40px;
+            margin-top: 20px; /* Adds spacing below the other gift button */
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .bye-btn:hover {
+            background-color: #444; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+    <!-- Title -->
+    <h1>ARTE MO TE</h1>
+
+    <!-- Description or additional info -->
+    <div class="description">
+       HA HA HA HA HA HA HA HA HA
+    </div>
+
+    <!-- Bye Button that closes the window -->
+    <a href="javascript:void(0);" class="bye-btn" onclick="closeWindow();">BYE</a>
+
+    <script>
+        // Function to close the window
+        function closeWindow() {
+            if (window.opener) {
+                window.close(); // Close the window if it's a popup
+            } else {
+                alert("You cannot close this window directly.");
+            }
+        }
+    </script>
+</body>
+</html>

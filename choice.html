@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What do you prefer?</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            height: 100vh;
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+        }
+
+        .container {
+            text-align: center; /* Center text and buttons */
+            position: relative; /* To position the back button at the bottom */
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #000;
+        }
+
+        .choice-btn {
+            display: inline-block;
+            width: 200px; /* Fixed width */
+            padding: 15px 0; /* Fixed padding */
+            font-size: 1.5rem;
+            text-align: center;
+            text-decoration: none;
+            margin: 15px 0;
+            border: none;
+            border-radius: 50px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .choice-btn:hover {
+            background-color: #444; /* Only background color changes */
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            color: #000;
+        }
+
+        /* Back Button Style */
+        .back-btn {
+            display: inline-block;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #fff; /* Text color */
+            background-color: #000; /* Button background color */
+            border-radius: 50px; /* Oval shape */
+            padding: 10px 30px; /* Button padding */
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            position: absolute; /* Positioning the button */
+            bottom: -40px; /* Moves the button below the "GIFT" button */
+            left: 50%;
+            transform: translateX(-50%); /* Center the button horizontally */
+        }
+
+        .back-btn:hover {
+            background-color: #444; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>What do you prefer?</h1>
+        <a href="money.html" class="choice-btn">MONEY</a>
+        <p>or</p>
+        <a href="gift.html" class="choice-btn">GIFT</a>
+        <!-- Back Button -->
+        <a href="index.html" class="back-btn">BACK</a>
+    </div>
+</body>
+</html>

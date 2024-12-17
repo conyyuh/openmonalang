@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Days Before Christmas</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            background-color: #fff;
+            color: #000;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .days {
+            font-size: 4rem;
+            font-weight: bold;
+            color: red;
+            margin-bottom: 10px;
+        }
+
+        .date {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .instruction {
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+        }
+        .btn-next {
+            background-color: black;
+            color: white;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .btn-next:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hi!</h1>
+    <div class="days" id="daysRemaining">00 days</div>
+    <div class="date" id="currentDate">month/date/year</div>
+   
+
+    <script>
+        // Function to calculate days until Christmas
+        function calculateDaysToChristmas() {
+            const today = new Date();
+            const currentYear = today.getFullYear();
+            let christmas = new Date(currentYear, 11, 25); // December 25th
+
+            // If today is after Christmas, calculate for next year
+            if (today > christmas) {
+                christmas = new Date(currentYear + 1, 11, 25);
+            }
+
+            const timeDiff = christmas - today;
+            const daysRemaining = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+            return daysRemaining;
+        }
+
+        // Function to update the current date
+        function updateCurrentDate() {
+            const today = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById("currentDate").innerText = today.toLocaleDateString('en-US', options);
+        }
+
+        // Initialize content
+        function init() {
+            const daysRemaining = calculateDaysToChristmas();
+            document.getElementById("daysRemaining").innerText = `${daysRemaining} days`;
+            updateCurrentDate();
+        }
+
+        // Run on page load
+        init();
+    </script>
+</body>
+</html>
+
+<a href="choice.html" class="btn-next" style="text-decoration: none;">
+    <button class="btn-next">Next</button>
+</a>
+        
